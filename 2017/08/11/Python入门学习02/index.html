@@ -94,18 +94,22 @@
 
 
 
-<meta name="description" content="碎碎念念，呜哩哇啦">
+<meta name="description" content="【小甲鱼】系列视频006笔记 算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。 逻辑操作符：and，or，not。逻辑操作符输出为true或者false。  课后习题 Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？如果回答是 1.5 那么很遗憾，您受到 C 语言的影响比较大，Python 这里会义无反顾地执行 floor">
 <meta name="keywords" content="Python,小甲鱼">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python入门学习02">
 <meta property="og:url" content="http://www.suiwula.cn/2017/08/11/Python入门学习02/index.html">
 <meta property="og:site_name" content="碎乌拉的小窝">
-<meta property="og:description" content="碎碎念念，呜哩哇啦">
+<meta property="og:description" content="【小甲鱼】系列视频006笔记 算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。 逻辑操作符：and，or，not。逻辑操作符输出为true或者false。  课后习题 Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？如果回答是 1.5 那么很遗憾，您受到 C 语言的影响比较大，Python 这里会义无反顾地执行 floor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T05:09:17.140Z">
+<meta property="og:image" content="http://i1.bvimg.com/604257/28adcacf7b47883a.png">
+<meta property="og:image" content="http://i1.bvimg.com/604257/7ace84c989761fed.png">
+<meta property="og:image" content="http://i1.bvimg.com/604257/37308841a5abd43d.png">
+<meta property="og:updated_time" content="2017-08-11T06:39:55.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python入门学习02">
-<meta name="twitter:description" content="碎碎念念，呜哩哇啦">
+<meta name="twitter:description" content="【小甲鱼】系列视频006笔记 算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。 逻辑操作符：and，or，not。逻辑操作符输出为true或者false。  课后习题 Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？如果回答是 1.5 那么很遗憾，您受到 C 语言的影响比较大，Python 这里会义无反顾地执行 floor">
+<meta name="twitter:image" content="http://i1.bvimg.com/604257/28adcacf7b47883a.png">
 
 
 
@@ -366,7 +370,68 @@
       
 
       
-        
+        <h1 id="【小甲鱼】系列视频006"><a href="#【小甲鱼】系列视频006" class="headerlink" title="【小甲鱼】系列视频006"></a>【小甲鱼】系列视频006</h1><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><ol>
+<li>算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。</li>
+<li>逻辑操作符：and，or，not。逻辑操作符输出为true或者false。</li>
+</ol>
+<h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><ol>
+<li>Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？<br>如果回答是 1.5 那么很遗憾，您受到 C 语言的影响比较大，Python 这里会义无反顾地执行 floor 除法原则，答案是：1.0</li>
+<li>a &lt; b &lt; c 事实上是等于？<br>(a &lt; b) and (b &lt; c)</li>
+<li>不使用 IDLE，你可以轻松说出 5 ** -2 的值吗？<br>0.04，也就是 1/25<br>幂运算操作符比其左侧的一元操作符优先级高，比其右侧的一元操作符优先级低。</li>
+<li>如何简单判断一个数是奇数还是偶数？<br>使用求余可以简单得到答案：能被 2 整除为偶数，所以 x % 2 == 0，否则为奇数。</li>
+<li>请用最快速度说出答案：not 1 or 0 and 1 or 3 and 4 or 5 and 6 or 7 and 8 and 9<br>如果你的回答是 0，那么小甲鱼很开心你中招了！<br>答案是：4<br>not or and 的优先级是不同的：not &gt; and &gt; or<br>我们按照优先级给它们加上括号：(not 1) or (0 and 1) or (3 and 4) or (5 and 6) or (7 and 8 and 9)<br>== 0 or 0 or 4 or 6 or 9<br>== 4<br>为啥是 4？<br>大家还记得第四讲作业提到的“短路逻辑”吗？3 and 4 == 4，而 3 or 4 == 3。<br>所以答案是：4<br>温馨提示：为了更好的表达你的程序，小甲鱼再次呼吁有些括号还是不能省下的，毕竟不是所有程序员都跟你一样都将优先级烂透于心的。</li>
+</ol>
+<h2 id="编程实例"><a href="#编程实例" class="headerlink" title="编程实例"></a>编程实例</h2><ol>
+<li>请写一个程序打印出 0~100 所有的奇数。     <pre>
+ i = 0
+ while i <= 2="" 100:="" if="" i="" %="" !="0:" print(i,'="" ')="" i+="1" else:="" <="" pre=""></=></pre></li>
+<li>题目：请编程求解该阶梯至少有多少阶？  </li>
+</ol>
+<blockquote>
+<p>爱因斯坦曾出过这样一道有趣的数学题：有一个长阶梯，若每步上2阶，最后剩1阶；若每步上3阶，最后剩2阶；若每步上5阶，最后剩4阶；若每步上6阶，最后剩5阶；只有每步上7阶，最后刚好一阶也不剩。   </p>
+</blockquote>
+<pre>
+x = 7
+i = 1
+flag = 0
+while i <= 100:="" if="" (x%2="=" 1)and(x%3="=" 2)and(x%5="=" 4)and(x%6="=5):" flag="1" else:="" x="7" *="" (i="" +="" 1)="" i+="1" 1:="" print('阶梯数是：',x)="" print('在程序限定的范围内找不到答案！')="" <="" pre="">
+
+
+
+<h1 id="【小甲鱼】系列视频008"><a href="#【小甲鱼】系列视频008" class="headerlink" title="【小甲鱼】系列视频008"></a>【小甲鱼】系列视频008</h1><h2 id="笔记-1"><a href="#笔记-1" class="headerlink" title="笔记"></a>笔记</h2><ol>
+<li>elif语句的引用</li>
+<li>避免“悬挂else”<br><img src="http://i1.bvimg.com/604257/28adcacf7b47883a.png" alt=""><br>在Python中强制缩进，就不会出现分不清哪个if和哪个else匹配的情况。</li>
+<li>三元运算符<br><img src="http://i1.bvimg.com/604257/7ace84c989761fed.png" alt=""></li>
+<li>断言<br><img src="http://i1.bvimg.com/604257/37308841a5abd43d.png" alt=""></li>
+</ol>
+<h2 id="课后习题-1"><a href="#课后习题-1" class="headerlink" title="课后习题"></a>课后习题</h2><ol>
+<li>if not (money &lt; 100): 这行代码相当于？<br>if money &gt;= 100:</li>
+</ol>
+<ol>
+<li><p>假设有 x = 1，y = 2，z = 3，请问如何快速将三个变量的值互相交换？<br>x, y, z = z, y, x</p>
+</li>
+<li><p>你听说过成员资格运算符吗？<br>Python 有一个成员资格运算符：in，用于检查一个值是否在序列中，如果在序列中返回 True，否则返回 False。<br>例如：<br> <pre><br> 1.&gt;&gt;&gt; name = ‘小甲鱼’<br> 2.&gt;&gt;&gt; ‘鱼’ in name<br> 3.True<br> 4.&gt;&gt;&gt; ‘肥鱼’ in name<br> 5.False<br> </pre></p>
+<h2 id="编程实例-1"><a href="#编程实例-1" class="headerlink" title="编程实例"></a>编程实例</h2></li>
+<li><p>视频中小甲鱼使用 if elif else 在大多数情况下效率要比全部使用 if 要高，但根据一般的统计规律，一个班的成绩一般服从正态分布，也就是说平均成绩一般集中在 70~80 分之间，因此根据统计规律，我们还可以改进下程序以提高效率。  </p>
+ <pre>
+ score = int (input ('请输入一个分数：'))
+ if 80 > score >= 60:
+     print('c')
+ elif 90 > score >= 80:
+     print('b')
+ elif 60 > score >= 90:
+     print('d')
+ elif 100 >= score >= 90:
+     print('a')
+ else:
+     print('输入错误！')
+
+ </pre></li>
+<li>x,y,z中找到最小的数   <pre>
+ small = x if (x < y and x < z) else (y if y < z else z)
+ </pre></li>
+</ol>
+</=></pre>
       
     </div>
     
@@ -458,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i2.bvimg.com/604257/1def1cb90db8f32c.png"
@@ -521,6 +595,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#【小甲鱼】系列视频006"><span class="nav-number">1.</span> <span class="nav-text">【小甲鱼】系列视频006</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#笔记"><span class="nav-number">1.1.</span> <span class="nav-text">笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课后习题"><span class="nav-number">1.2.</span> <span class="nav-text">课后习题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程实例"><span class="nav-number">1.3.</span> <span class="nav-text">编程实例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#【小甲鱼】系列视频008"><span class="nav-number">2.</span> <span class="nav-text">【小甲鱼】系列视频008</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#笔记-1"><span class="nav-number">2.1.</span> <span class="nav-text">笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课后习题-1"><span class="nav-number">2.2.</span> <span class="nav-text">课后习题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程实例-1"><span class="nav-number">2.3.</span> <span class="nav-text">编程实例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
