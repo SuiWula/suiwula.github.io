@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hext,next主题," />
+  <meta name="keywords" content="hexo,next主题," />
 
 
 
@@ -95,7 +95,7 @@
 
 
 <meta name="description" content="本文承接本人上一篇文章，利用github和hexo搭建网站   更换主题下载next主题好的主题有很多，我们就以next主题为例来美化我们的博客吧！   在Blog根目录下，打开Git Bash,输入  git clone https://github.com/iissnan/hexo-theme-next themes/next    回车，git会自动帮你克隆最新的next主题到你的博客the">
-<meta name="keywords" content="hext,next主题">
+<meta name="keywords" content="hexo,next主题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Hexo框架下NexT主题的网站优化">
 <meta property="og:url" content="http://www.suiwula.cn/2017/08/11/基于Hexo框架下NexT主题的网站优化/index.html">
@@ -113,7 +113,12 @@
 <meta property="og:image" content="http://i1.bvimg.com/604257/679487f3e8099372.png">
 <meta property="og:image" content="http://i1.bvimg.com/604257/0675fad52a8ba788.png">
 <meta property="og:image" content="http://i1.bvimg.com/604257/8c15ecbcb4b386ff.png">
-<meta property="og:updated_time" content="2017-08-11T04:17:14.810Z">
+<meta property="og:image" content="http://i4.bvimg.com/604257/e31e421fa1f5b5fd.png">
+<meta property="og:image" content="http://i4.bvimg.com/604257/29a1fb813ed39be7.png">
+<meta property="og:image" content="http://i4.bvimg.com/604257/04da6ab3632f4084.png">
+<meta property="og:image" content="http://i4.bvimg.com/604257/9c3f50924394050d.png">
+<meta property="og:image" content="http://i4.bvimg.com/604257/0436f3ddb05e5162.png">
+<meta property="og:updated_time" content="2017-08-11T04:53:32.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Hexo框架下NexT主题的网站优化">
 <meta name="twitter:description" content="本文承接本人上一篇文章，利用github和hexo搭建网站   更换主题下载next主题好的主题有很多，我们就以next主题为例来美化我们的博客吧！   在Blog根目录下，打开Git Bash,输入  git clone https://github.com/iissnan/hexo-theme-next themes/next    回车，git会自动帮你克隆最新的next主题到你的博客the">
@@ -427,6 +432,37 @@ hexo new page "about"
 <p><img src="http://i1.bvimg.com/604257/0675fad52a8ba788.png" alt=""></p>
 <p>网站效果如下：</p>
 <p><img src="http://i1.bvimg.com/604257/8c15ecbcb4b386ff.png" alt=""></p>
+<h3 id="设置右侧头像"><a href="#设置右侧头像" class="headerlink" title="设置右侧头像"></a>设置右侧头像</h3><p>编辑站点配置文件，添加如下内容</p>
+<p>avatar: your avatar url</p>
+<p>其中，your avatar url是完整的互联网url，你可以先将头像图片放在图床上，在复制链接，粘贴过来。  </p>
+<p>效果如下：</p>
+<p><img src="http://i4.bvimg.com/604257/e31e421fa1f5b5fd.png" alt=""></p>
+<h3 id="设置favicon图标"><a href="#设置favicon图标" class="headerlink" title="设置favicon图标"></a>设置favicon图标</h3><p>首先要有一个常见格式名(如.jpg, .png等)的图片作为备选favicon，选择一个favicon制作网站完成制作，例如<a href="http://www.bitbug.net/" target="_blank" rel="external">比特虫</a>是一个免费的在线制作ico图标网站。</p>
+<p>将favicon.ico文件放在网站根目录下的source文件夹内即可。</p>
+<p><img src="http://i4.bvimg.com/604257/29a1fb813ed39be7.png" alt=""></p>
+<p>用git刷新网站，就可以看到效果了。</p>
+<p><img src="http://i4.bvimg.com/604257/04da6ab3632f4084.png" alt=""></p>
+<h3 id="首页文章以摘要形式显示"><a href="#首页文章以摘要形式显示" class="headerlink" title="首页文章以摘要形式显示"></a>首页文章以摘要形式显示</h3><p>最简单的方式是：打开主题配置文件，找到如下位置，修改</p>
+<p><img src="http://i4.bvimg.com/604257/9c3f50924394050d.png" alt=""></p>
+<p>其中length代表显示摘要的截取字符长度。</p>
+<h3 id="添加背景图"><a href="#添加背景图" class="headerlink" title="添加背景图"></a>添加背景图</h3><p>首先找到一个背景图片放到 Blog（hexo工程文件）-&gt; themes -&gt; next -&gt; source -&gt; images 的路径下；</p>
+<p>Blog（hexo工程文件）-&gt; themes -&gt; next -&gt; source -&gt; css -&gt; _custom ，找到路径下的custom.styl文件，在文件的最上方加上一代码</p>
+<pre>
+body {  
+ background:url(/images/backGround.jpg（这是你之前加的背景图片的名字）);  
+     }
+</pre>
+
+<p>效果图：</p>
+<p><img src="http://i4.bvimg.com/604257/0436f3ddb05e5162.png" alt=""></p>
+<p>如果想让背景图片不随着页面移动而移动，在上面的代码后加上一行代码</p>
+<pre>
+body {
+  background:url(/images/background.jpeg);
+  background-attachment: fixed;
+}
+</pre>
+
 
       
     </div>
@@ -444,7 +480,7 @@ hexo new page "about"
       
         <div class="post-tags">
           
-            <a href="/tags/hext/" rel="tag"># hext</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
             <a href="/tags/next主题/" rel="tag"># next主题</a>
           
@@ -566,7 +602,7 @@ hexo new page "about"
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -601,7 +637,7 @@ hexo new page "about"
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题"><span class="nav-number">1.</span> <span class="nav-text">更换主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载next主题"><span class="nav-number">1.1.</span> <span class="nav-text">下载next主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题"><span class="nav-number">1.2.</span> <span class="nav-text">安装主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题优化"><span class="nav-number">2.</span> <span class="nav-text">next主题优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更改语言"><span class="nav-number">2.1.</span> <span class="nav-text">更改语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加分类、标签云、关于等页面"><span class="nav-number">2.2.</span> <span class="nav-text">添加分类、标签云、关于等页面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题"><span class="nav-number">1.</span> <span class="nav-text">更换主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载next主题"><span class="nav-number">1.1.</span> <span class="nav-text">下载next主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题"><span class="nav-number">1.2.</span> <span class="nav-text">安装主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题优化"><span class="nav-number">2.</span> <span class="nav-text">next主题优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更改语言"><span class="nav-number">2.1.</span> <span class="nav-text">更改语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加分类、标签云、关于等页面"><span class="nav-number">2.2.</span> <span class="nav-text">添加分类、标签云、关于等页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置右侧头像"><span class="nav-number">2.3.</span> <span class="nav-text">设置右侧头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置favicon图标"><span class="nav-number">2.4.</span> <span class="nav-text">设置favicon图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首页文章以摘要形式显示"><span class="nav-number">2.5.</span> <span class="nav-text">首页文章以摘要形式显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加背景图"><span class="nav-number">2.6.</span> <span class="nav-text">添加背景图</span></a></li></ol></li></ol></div>
             
 
           </div>
