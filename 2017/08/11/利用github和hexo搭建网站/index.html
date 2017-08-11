@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="github,hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="利用github+hexo搭建个人网站什么是Hexo?Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：hexojs/hexo 如果想要更加全面的了解Hexo，可以到其官网 Hexo 了解更多的细节，因为Hexo的创建者是台">
+<meta name="keywords" content="github,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用github和hexo搭建网站">
+<meta property="og:url" content="http://www.suiwula.cn/2017/08/11/利用github和hexo搭建网站/index.html">
+<meta property="og:site_name" content="碎乌拉的小窝">
+<meta property="og:description" content="利用github+hexo搭建个人网站什么是Hexo?Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：hexojs/hexo 如果想要更加全面的了解Hexo，可以到其官网 Hexo 了解更多的细节，因为Hexo的创建者是台">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i2.bvimg.com/604257/c1e5d9fc5eaa0022.jpg">
+<meta property="og:image" content="http://i1.bvimg.com/604257/70753362ed1fa5a3.jpg">
+<meta property="og:image" content="http://i1.bvimg.com/604257/506c4e57b0719b99.jpg">
+<meta property="og:image" content="http://i1.bvimg.com/604257/ee1ffb3fa02641e7.jpg">
+<meta property="og:image" content="http://i1.bvimg.com/604257/988df73bc520dd7e.png">
+<meta property="og:image" content="http://i1.bvimg.com/604257/88bab4165183b8ea.png">
+<meta property="og:image" content="http://i1.bvimg.com/604257/5339a2a2235cf505.jpg">
+<meta property="og:image" content="http://i1.bvimg.com/604257/7de9548ca4e5a0cc.png">
+<meta property="og:image" content="http://i1.bvimg.com/604257/ee46d54808453744.png">
+<meta property="og:image" content="http://i1.bvimg.com/604257/9278b78d561bb650.png">
+<meta property="og:image" content="http://i2.bvimg.com/604257/e840b4c1e1332ac9.png">
+<meta property="og:image" content="http://i2.bvimg.com/604257/af1955694e5451f6.png">
+<meta property="og:image" content="http://i2.bvimg.com/604257/fce39f4d252751ba.png">
+<meta property="og:image" content="http://i2.bvimg.com/604257/691718cf7962878a.png">
+<meta property="og:updated_time" content="2017-08-11T02:37:01.377Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用github和hexo搭建网站">
+<meta name="twitter:description" content="利用github+hexo搭建个人网站什么是Hexo?Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：hexojs/hexo 如果想要更加全面的了解Hexo，可以到其官网 Hexo 了解更多的细节，因为Hexo的创建者是台">
+<meta name="twitter:image" content="http://i2.bvimg.com/604257/c1e5d9fc5eaa0022.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.suiwula.cn/2017/08/11/利用github和hexo搭建网站/"/>
+
+
+
+
+
+  <title>利用github和hexo搭建网站 | 碎乌拉的小窝</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">碎乌拉的小窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">碎碎念念，呜哩哇啦</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.suiwula.cn/2017/08/11/利用github和hexo搭建网站/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="碎乌拉">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://i2.bvimg.com/604257/1def1cb90db8f32c.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="碎乌拉的小窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">利用github和hexo搭建网站</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T08:54:39+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网站搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">网站搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="利用github-hexo搭建个人网站"><a href="#利用github-hexo搭建个人网站" class="headerlink" title="利用github+hexo搭建个人网站"></a>利用github+hexo搭建个人网站</h1><h2 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h2><p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexojs/hexo</a> 如果想要更加全面的了解Hexo，可以到其官网 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 了解更多的细节，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。这里，默认各位猿/媛儿都知道GitHub就不再赘述。</p>
+<h2 id="搭建步骤："><a href="#搭建步骤：" class="headerlink" title="搭建步骤："></a>搭建步骤：</h2><ul>
+<li>获得个人网站域名  </li>
+<li>github创建个人仓库  </li>
+<li>安装Git</li>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+<li>推送网站</li>
+<li>绑定域名  </li>
+<li><h3 id="获得个人网站域名"><a href="#获得个人网站域名" class="headerlink" title="获得个人网站域名"></a>获得个人网站域名</h3></li>
+</ul>
+<p>域名是网站的入口，也是网站的第一印象，比如饿了么的官网的域名是：<a href="https://www.ele.me/" target="_blank" rel="external">ele.me</a> ，很是巧妙。常见的有com,cn,net,org等后缀，也有小众的xyz,me,io等后缀，根据你自己的喜好，选择不同的后缀，比如我选择就是常见的com后缀。很多小众奇特的后缀在大陆是没办法备案的，网站也就无法上线。然而使用GitHub托管我们的网站，完全不需要备案，因为托管我们的网站内容的服务器在美国，而且在国内备案流程也比较繁杂，时间需要一周左右。</p>
+<p>申请域名的地方有很多，这里推荐阿里云：<a href="https://www.aliyun.com/" target="_blank" rel="external">阿里云-为了无法计算的价值</a> 申请入口：<a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="external">域名注册</a> 购买域名这也是我们整个搭建过程中惟一一个需要花钱的地方。如果你已经有了空闲域名就无需购买，直接使用即可。</p>
+<p>我是在阿里云申请的域名，购买后，需要进行实名认证才能访问和解析，具体查看<a href="https://help.aliyun.com/noticelist/articleid/20273717.html?spm=5176.2020520001.1004.9.ujfgWR" target="_blank" rel="external">域名实名认证公告</a>。</p>
+<h3 id="github创建个人仓库"><a href="#github创建个人仓库" class="headerlink" title="github创建个人仓库"></a>github创建个人仓库</h3><p>登录到GitHub,如果没有GitHub帐号，使用你的邮箱注册GitHub帐号：<a href="https://github.com/" target="_blank" rel="external">Build software better, together</a> 点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：suiwula.github.io。</p>
+<p>###安装Git</p>
+<p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。 从Git官网下载：<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git - Downloading Package</a> 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash<br><img src="http://i2.bvimg.com/604257/c1e5d9fc5eaa0022.jpg" alt=""></p>
+<p>设置user.name和user.email配置信息：  </p>
+<pre> 
+git  config --global user.name "你的github用户名"
+git  config --global user.email "你的github注册邮箱"
+</pre> 
+
+<p>生成ssh密钥文件：</p>
+<pre>
+ssh-keygen -t rsa -C "你的github注册邮箱"
+</pre>
+
+<p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制</p>
+<p><img src="http://i1.bvimg.com/604257/70753362ed1fa5a3.jpg" alt=""></p>
+<p>打开<a href="https://github.com/settings/keys" target="_blank" rel="external">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
+<p><img src="http://i1.bvimg.com/604257/506c4e57b0719b99.jpg" alt=""></p>
+<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com ：</p>
+<p><img src="http://i1.bvimg.com/604257/ee1ffb3fa02641e7.jpg" alt=""></p>
+<p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>Hexo基于Node.js，Node.js下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Download | Node.js</a> 下载安装包，注意安装Node.js会包含环境变量及npm的安装，安装后，检测Node.js是否安装成功，在命令行中输入 node -v :</p>
+<p><img src="http://i1.bvimg.com/604257/988df73bc520dd7e.png" alt=""></p>
+<p>检测npm是否安装成功，在命令行中输入npm -v :</p>
+<p><img src="http://i1.bvimg.com/604257/88bab4165183b8ea.png" alt=""></p>
+<p>到这了，安装Hexo的环境已经全部搭建完成。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Hexo就是我们的个人博客网站的框架， 这里需要自己在电脑常里创建一个文件夹，可以命名为Blog，Hexo框架与以后你自己发布的网页都在这个文件夹中。创建好后，进入文件夹中，按住shift键，右击鼠标点击命令行</p>
+<p><img src="http://i1.bvimg.com/604257/5339a2a2235cf505.jpg" alt=""></p>
+<p>使用npm命令安装Hexo，输入：</p>
+<pre>
+npm install -g hexo-cli 
+</pre>
+
+<p>这个安装时间较长耐心等待，安装完成后，初始化我们的博客，输入：</p>
+<pre>
+hexo init blog
+</pre>
+
+<p>注意，这里的命令都是作用在刚刚创建的Blog文件夹中。<br>为了检测我们的网站雏形，分别按顺序输入以下三条命令：</p>
+<pre>
+hexo new hello
+
+hexo g
+
+hexo s
+</pre>
+
+<p>这些命令在后面作介绍，完成后，打开浏览器输入地址：</p>
+<p>localhost:4000</p>
+<p>可以看出我们写出第一篇博客。</p>
+<p>如果你输入上面地址打不开，可能是4000端口被占用。输入</p>
+<pre>
+hexo s -p 5000
+</pre>
+
+<p>打开浏览器地址：<br>localhost:5000，即可显示。</p>
+<p>现在来介绍常用的Hexo 命令  </p>
+<p>npm install hexo -g #安装Hexo<br>npm update hexo -g #升级<br>hexo init #初始化博客</p>
+<p>命令简写<br>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo g == hexo generate #生成<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #部署  </p>
+<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令  </p>
+<p>刚刚的三个命令依次是新建一篇博客文章、生成网页、在本地预览的操作。</p>
+<h3 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h3><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
+<p><img src="http://i1.bvimg.com/604257/7de9548ca4e5a0cc.png" alt=""></p>
+<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件，如下图</p>
+<p><img src="http://i1.bvimg.com/604257/ee46d54808453744.png" alt=""></p>
+<p>下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为：</p>
+<p>deploy:<br>type: git<br>repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git<br>branch: master参考如下：  </p>
+<p><img src="http://i1.bvimg.com/604257/9278b78d561bb650.png" alt=""></p>
+<p>保存站点配置文件。其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。  </p>
+<p>最后安装Git部署插件，输入命令：</p>
+<pre>
+npm install hexo-deployer-git --save
+</pre>
+
+<p>这时，我们分别输入三条命令：</p>
+<pre>
+hexo clean
+
+hexo g
+
+hexo d
+</pre>
+
+<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a href="http://xxxx.github.io。" target="_blank" rel="external">http://xxxx.github.io。</a> 比如我输入的网站就是：<a href="suiwula.github.io">suiwula.github.io</a>  </p>
+<p>你就会发现你的博客已经上线了，可以在网络上被访问了。</p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><p>虽然在Internet上可以访问我们的网站，但是网址是GitHub提供的:<a href="http://xxxx.github.io" target="_blank" rel="external">http://xxxx.github.io</a> 而我们想使用我们自己的个性化域名，这就需要绑定我们自己的域名。这里演示的是在阿里云万网的域名绑定，在国内主流的域名代理厂商也就阿里云和腾讯云。登录到阿里云，进入管理控制台的域名列表，找到你的个性化域名，进入解析</p>
+<p><img src="http://i2.bvimg.com/604257/e840b4c1e1332ac9.png" alt=""></p>
+<p>然后添加解析</p>
+<p><img src="http://i2.bvimg.com/604257/af1955694e5451f6.png" alt=""></p>
+<p>包括添加三条解析记录:  </p>
+<p>ping你的 <a href="http://xxxx.github.io" target="_blank" rel="external">http://xxxx.github.io</a> 的ip地址，填入A记录类型。  </p>
+<p>第二步，登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名,点击save保存。</p>
+<p><img src="http://i2.bvimg.com/604257/fce39f4d252751ba.png" alt=""></p>
+<p>第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。</p>
+<p><img src="http://i2.bvimg.com/604257/691718cf7962878a.png" alt=""></p>
+<p>保存，命名为CNAME ，注意保存成所有文件而不是txt文件。</p>
+<p>完成这三步，进入blog目录中，右击打开Git Bash Here，依次输入：</p>
+<pre>
+hexo clean
+
+hexo g
+
+hexo d
+</pre>
+
+<p>等上几十秒，再打开浏览器在地址栏输入你的个性化域名将会直接进入你自己搭建的网站。</p>
+<p>通过以上流程，我们就可以搭建一个属于自己的网站小窝啦 ^_^</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/09/Python入门学习01/" rel="next" title="Python入门学习01">
+                <i class="fa fa-chevron-left"></i> Python入门学习01
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://i2.bvimg.com/604257/1def1cb90db8f32c.png"
+               alt="碎乌拉" />
+          <p class="site-author-name" itemprop="name">碎乌拉</p>
+           
+              <p class="site-description motion-element" itemprop="description">碎碎念念，呜哩哇啦</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#利用github-hexo搭建个人网站"><span class="nav-number">1.</span> <span class="nav-text">利用github+hexo搭建个人网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Hexo?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤："><span class="nav-number">1.2.</span> <span class="nav-text">搭建步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获得个人网站域名"><span class="nav-number">1.2.1.</span> <span class="nav-text">获得个人网站域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github创建个人仓库"><span class="nav-number">1.2.2.</span> <span class="nav-text">github创建个人仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送网站"><span class="nav-number">1.2.5.</span> <span class="nav-text">推送网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">1.2.6.</span> <span class="nav-text">绑定域名</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">碎乌拉</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
