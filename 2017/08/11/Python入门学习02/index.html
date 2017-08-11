@@ -105,7 +105,7 @@
 <meta property="og:image" content="http://i1.bvimg.com/604257/28adcacf7b47883a.png">
 <meta property="og:image" content="http://i1.bvimg.com/604257/7ace84c989761fed.png">
 <meta property="og:image" content="http://i1.bvimg.com/604257/37308841a5abd43d.png">
-<meta property="og:updated_time" content="2017-08-11T06:46:30.898Z">
+<meta property="og:updated_time" content="2017-08-11T06:52:37.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python入门学习02">
 <meta name="twitter:description" content="【小甲鱼】系列视频006笔记 算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。 逻辑操作符：and，or，not。逻辑操作符输出为true或者false。  课后习题 Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？如果回答是 1.5 那么很遗憾，您受到 C 语言的影响比较大，Python 这里会义无反顾地执行 floor">
@@ -385,19 +385,15 @@
 <li>请写一个程序打印出 0~100 所有的奇数。     <pre>
  i = 0
  while i <= 2="" 100:="" if="" i="" %="" !="0:" print(i,'="" ')="" i+="1" else:="" <="" pre=""></=></pre></li>
-<li>题目：请编程求解该阶梯至少有多少阶？  </li>
+<li><p>题目：请编程求解该阶梯至少有多少阶？爱因斯坦曾出过这样一道有趣的数学题：有一个长阶梯，若每步上2阶，最后剩1阶；若每步上3阶，最后剩2阶；若每步上5阶，最后剩4阶；若每步上6阶，最后剩5阶；只有每步上7阶，最后刚好一阶也不剩。  </p>
+ <pre>
+ x = 7
+ i = 1
+ flag = 0
+ while i <= 100:="" if="" (x%2="=" 1)and(x%3="=" 2)and(x%5="=" 4)and(x%6="=5):" flag="1" else:="" x="7" *="" (i="" +="" 1)="" i+="1" 1:="" print('阶梯数是：',x)="" print('在程序限定的范围内找不到答案！')="" <="" pre="">            
+
+</=></pre></li>
 </ol>
-<blockquote>
-<p>爱因斯坦曾出过这样一道有趣的数学题：有一个长阶梯，若每步上2阶，最后剩1阶；若每步上3阶，最后剩2阶；若每步上5阶，最后剩4阶；若每步上6阶，最后剩5阶；只有每步上7阶，最后刚好一阶也不剩。   </p>
-</blockquote>
-<pre>
-x = 7
-i = 1
-flag = 0
-while i <= 100:="" if="" (x%2="=" 1)and(x%3="=" 2)and(x%5="=" 4)and(x%6="=5):" flag="1" else:="" x="7" *="" (i="" +="" 1)="" i+="1" 1:="" print('阶梯数是：',x)="" print('在程序限定的范围内找不到答案！')="" <="" pre="">
-
-
-
 <h1 id="【小甲鱼】系列视频008"><a href="#【小甲鱼】系列视频008" class="headerlink" title="【小甲鱼】系列视频008"></a>【小甲鱼】系列视频008</h1><h2 id="笔记-1"><a href="#笔记-1" class="headerlink" title="笔记"></a>笔记</h2><ol>
 <li>elif语句的引用</li>
 <li>避免“悬挂else”<br><img src="http://i1.bvimg.com/604257/28adcacf7b47883a.png" alt=""><br>在Python中强制缩进，就不会出现分不清哪个if和哪个else匹配的情况。</li>
@@ -431,7 +427,7 @@ while i <= 100:="" if="" (x%2="=" 1)and(x%3="=" 2)and(x%5="=" 4)and(x%6="=5):" f
  small = x if (x < y and x < z) else (y if y < z else z)
  </pre></li>
 </ol>
-</=></pre>
+
       
     </div>
     
