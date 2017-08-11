@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://i2.bvimg.com/604257/af1955694e5451f6.png">
 <meta property="og:image" content="http://i2.bvimg.com/604257/fce39f4d252751ba.png">
 <meta property="og:image" content="http://i2.bvimg.com/604257/691718cf7962878a.png">
-<meta property="og:updated_time" content="2017-08-11T02:37:01.377Z">
+<meta property="og:updated_time" content="2017-08-11T02:42:08.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用github和hexo搭建网站">
 <meta name="twitter:description" content="利用github+hexo搭建个人网站什么是Hexo?Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：hexojs/hexo 如果想要更加全面的了解Hexo，可以到其官网 Hexo 了解更多的细节，因为Hexo的创建者是台">
@@ -390,14 +390,12 @@
 <li>安装Hexo</li>
 <li>推送网站</li>
 <li>绑定域名  </li>
-<li><h3 id="获得个人网站域名"><a href="#获得个人网站域名" class="headerlink" title="获得个人网站域名"></a>获得个人网站域名</h3></li>
 </ul>
-<p>域名是网站的入口，也是网站的第一印象，比如饿了么的官网的域名是：<a href="https://www.ele.me/" target="_blank" rel="external">ele.me</a> ，很是巧妙。常见的有com,cn,net,org等后缀，也有小众的xyz,me,io等后缀，根据你自己的喜好，选择不同的后缀，比如我选择就是常见的com后缀。很多小众奇特的后缀在大陆是没办法备案的，网站也就无法上线。然而使用GitHub托管我们的网站，完全不需要备案，因为托管我们的网站内容的服务器在美国，而且在国内备案流程也比较繁杂，时间需要一周左右。</p>
+<h3 id="获得个人网站域名"><a href="#获得个人网站域名" class="headerlink" title="获得个人网站域名"></a>获得个人网站域名</h3><p>域名是网站的入口，也是网站的第一印象，比如饿了么的官网的域名是：<a href="https://www.ele.me/" target="_blank" rel="external">ele.me</a> ，很是巧妙。常见的有com,cn,net,org等后缀，也有小众的xyz,me,io等后缀，根据你自己的喜好，选择不同的后缀，比如我选择就是常见的com后缀。很多小众奇特的后缀在大陆是没办法备案的，网站也就无法上线。然而使用GitHub托管我们的网站，完全不需要备案，因为托管我们的网站内容的服务器在美国，而且在国内备案流程也比较繁杂，时间需要一周左右。</p>
 <p>申请域名的地方有很多，这里推荐阿里云：<a href="https://www.aliyun.com/" target="_blank" rel="external">阿里云-为了无法计算的价值</a> 申请入口：<a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="external">域名注册</a> 购买域名这也是我们整个搭建过程中惟一一个需要花钱的地方。如果你已经有了空闲域名就无需购买，直接使用即可。</p>
 <p>我是在阿里云申请的域名，购买后，需要进行实名认证才能访问和解析，具体查看<a href="https://help.aliyun.com/noticelist/articleid/20273717.html?spm=5176.2020520001.1004.9.ujfgWR" target="_blank" rel="external">域名实名认证公告</a>。</p>
 <h3 id="github创建个人仓库"><a href="#github创建个人仓库" class="headerlink" title="github创建个人仓库"></a>github创建个人仓库</h3><p>登录到GitHub,如果没有GitHub帐号，使用你的邮箱注册GitHub帐号：<a href="https://github.com/" target="_blank" rel="external">Build software better, together</a> 点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：suiwula.github.io。</p>
-<p>###安装Git</p>
-<p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。 从Git官网下载：<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git - Downloading Package</a> 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash<br><img src="http://i2.bvimg.com/604257/c1e5d9fc5eaa0022.jpg" alt=""></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。 从Git官网下载：<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git - Downloading Package</a> 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash<br><img src="http://i2.bvimg.com/604257/c1e5d9fc5eaa0022.jpg" alt=""></p>
 <p>设置user.name和user.email配置信息：  </p>
 <pre> 
 git  config --global user.name "你的github用户名"
@@ -676,7 +674,7 @@ hexo d
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#利用github-hexo搭建个人网站"><span class="nav-number">1.</span> <span class="nav-text">利用github+hexo搭建个人网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Hexo?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤："><span class="nav-number">1.2.</span> <span class="nav-text">搭建步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获得个人网站域名"><span class="nav-number">1.2.1.</span> <span class="nav-text">获得个人网站域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github创建个人仓库"><span class="nav-number">1.2.2.</span> <span class="nav-text">github创建个人仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送网站"><span class="nav-number">1.2.5.</span> <span class="nav-text">推送网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">1.2.6.</span> <span class="nav-text">绑定域名</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#利用github-hexo搭建个人网站"><span class="nav-number">1.</span> <span class="nav-text">利用github+hexo搭建个人网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Hexo?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤："><span class="nav-number">1.2.</span> <span class="nav-text">搭建步骤：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获得个人网站域名"><span class="nav-number">1.2.1.</span> <span class="nav-text">获得个人网站域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github创建个人仓库"><span class="nav-number">1.2.2.</span> <span class="nav-text">github创建个人仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.2.4.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.5.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送网站"><span class="nav-number">1.2.6.</span> <span class="nav-text">推送网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">1.2.7.</span> <span class="nav-text">绑定域名</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
