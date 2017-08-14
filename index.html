@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +85,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
 
 
 
@@ -111,11 +109,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: false,
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -162,6 +160,8 @@
  ">
     <div class="headband"></div>
 
+    <a href="https://github.com/suiwula"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -201,6 +201,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -350,8 +370,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/14/Python入门学习03/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -491,36 +518,19 @@
       
         
           
-            <h2 id="git-log指令"><a href="#git-log指令" class="headerlink" title="git log指令"></a><code>git log</code>指令</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p><code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>将readme.txt文件修改如下如下，并提交：</p>
-<pre>
+          git log指令作用git log可以查看提交历史，以便确定要回退到哪个版本。
+例子将readme.txt文件修改如下如下，并提交：
+
 Git is a distributed version control system.
-Git is free software distributed under the GPL.
-</pre>
-
-<p>版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用<code>git log</code>命令查看：</p>
-<p><img src="http://i2.fuimg.com/604257/f0ed9978fef13962.png" alt=""></p>
-<p><code>git log</code>命令显示从最近到最远的提交日志，我们可以看到3次提交，最近的一次是<code>append GPL</code>，上一次是<code>add distributed</code>，最早的一次是<code>wrote a readme file</code>。如果嫌输出信息太多，看得眼花缭乱的，可以试试加上<code>--pretty=oneline</code>参数：</p>
-<p><img src="http://i2.fuimg.com/604257/a5a12ca78421d963.png" alt=""></p>
-<p>需要友情提示的是，你看到的一大串类似6edc3a…e956a6的是<code>commit id</code>（版本号），和SVN不一样，Git的<code>commit id</code>不是1，2，3……递增的数字，而是一个SHA1计算出来的一个非常大的数字，用十六进制表示，而且你看到的<code>commit id</code>和我的肯定不一样，以你自己的为准。为什么<code>commit id</code>需要用这么一大串数字表示呢？因为Git是分布式的版本控制系统，后面我们还要研究多人在同一个版本库里工作，如果大家都用1，2，3……作为版本号，那肯定就冲突了。</p>
-<h2 id="git-reset指令"><a href="#git-reset指令" class="headerlink" title="git reset指令"></a><code>git reset</code>指令</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>把文件回退到某一版本</p>
-<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>首先，Git必须知道当前版本是哪个版本，在Git中，用<code>HEAD</code>表示当前版本，也就是最新的提交6edc3a…e956a6（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<code>HEAD~100</code>。</p>
-<p>现在，我们要把当前版本“append GPL”回退到上一个版本“add distributed”，就可以使用<code>git reset</code>命令：</p>
-<p><img src="http://i2.fuimg.com/604257/53d9b1c5f6d03f20.png" alt=""></p>
-<p>看看readme.txt的内容是不是版本<code>add distributed</code>：</p>
-<p><img src="http://i2.fuimg.com/604257/11b8c22462a4ad87.png" alt=""></p>
-<h2 id="git-reflog指令"><a href="#git-reflog指令" class="headerlink" title="git reflog指令"></a><code>git reflog</code>指令</h2><h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><p>当你用<code>$ git reset --hard HEAD^</code>回退到<code>add distributed</code>版本时，再想恢复到<code>append GPL</code>，就必须找到<code>append GPL</code>的commit id。Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令：</p>
-<h3 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h3><p><img src="http://i2.fuimg.com/604257/d0c33af7a3ece554.png" alt=""></p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol>
-<li><p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。</p>
-</li>
-<li><p>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
-</li>
-<li><p>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
-</ol>
-
-          
+Git is free software distributed und
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/14/Git入门学习03/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -660,22 +670,18 @@ Git is free software distributed under the GPL.
       
         
           
-            <h2 id="Git-status指令"><a href="#Git-status指令" class="headerlink" title="Git status指令"></a><code>Git status</code>指令</h2><h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><p>要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>上文中，我们已经成功地添加并提交了一个readme.txt文件，现在，是时候继续工作了，于是，我们继续修改readme.txt文件，改成如下内容：</p>
-<pre>
-Git is a distributed version control system.
-Git is free software.
-</pre>
+          Git status指令作用：要随时掌握工作区的状态，使用git status命令。
+例子上文中，我们已经成功地添加并提交了一个readme.txt文件，现在，是时候继续工作了，于是，我们继续修改readme.txt文件，改成如下内容：
 
-<p>现在，运行<code>git status</code>命令看看结果：</p>
-<p><img src="http://i2.fuimg.com/604257/1aa98f394ce43549.png" alt=""></p>
-<p><code>git status</code>命令可以让我们时刻掌握仓库当前的状态，上面的命令告诉我们，readme.txt被修改过了，但还没有准备提交的修改。</p>
-<h2 id="git-diff指令"><a href="#git-diff指令" class="headerlink" title="git diff指令"></a><code>git diff</code>指令</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。</p>
-<h3 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h3><p>接上，虽然Git告诉我们readme.txt被修改了，但如果能看看具体修改了什么内容，自然是很好的。所以，需要用<code>git diff</code>这个命令看看：</p>
-<p><img src="http://i2.fuimg.com/604257/7e6411e4d5ac8f7e.png" alt=""></p>
-<p><code>git diff</code>顾名思义就是查看difference，显示的格式正是Unix通用的diff格式，可以从上面的命令输出看到，我们在第一行添加了一个“distributed”单词。</p>
-
-          
+Git is a distributed version c
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/13/Git入门学习02/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -815,43 +821,17 @@ Git is free software.
       
         
           
-            <h1 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h1><h2 id="Git是什么？"><a href="#Git是什么？" class="headerlink" title="Git是什么？"></a>Git是什么？</h2><p>Git是目前世界上最先进的分布式版本控制系统。可以高效地管理代码，使用github社区必备。</p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>因为我用的是64位的Windows系统，所以以此为示例。  </p>
-<p>从Git官网下载：<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git - Downloading Package</a> 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！  </p>
-<p><img src="http://i1.bvimg.com/604257/d4797298cd286222.png" alt=""></p>
-<p>安装成功后，还需要最后一步设置，在命令行输入：</p>
-<pre> 
-git  config --global user.name "Your Name"
-git  config --global user.email "email@example.com"
-</pre> 
-
-<p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。</p>
-<h1 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h1><h2 id="什么是版本库？"><a href="#什么是版本库？" class="headerlink" title="什么是版本库？"></a>什么是版本库？</h2><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
-<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>首先，选择一个合适的地方，创建一个空目录：</p>
-<p><img src="http://i2.bvimg.com/604257/fe216ad5e63f1c14.png" alt="">  </p>
-<p><code>pwd</code>命令用于显示当前目录。</p>
-<p>第二步，通过<code>git init</code>命令把这个目录变成Git可以管理的仓库：</p>
-<p><img src="http://i2.bvimg.com/604257/afd1e8168b98b976.png" alt=""></p>
-<p>瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），细心的读者可以发现当前目录下多了一个<code>.git</code>的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</p>
-<h2 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h2><p>首先这里再明确一下，所有的版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等，Git也不例外。版本控制系统可以告诉你每次的改动，比如在第5行加了一个单词“Linux”，在第8行删了一个单词“Windows”。</p>
-<p>现在我们编写一个<code>readme.txt</code>文件，内容如下：</p>
-<pre>
-Git is a version control system.  
-Git is free software.
-</pre>
-
-<p>一定要放到<code>learngit</code>目录下（子目录也行），因为这是一个Git仓库，放到其他地方Git再厉害也找不到这个文件。</p>
-<p>和把大象放到冰箱需要3步相比，把一个文件放到Git仓库只需要两步。</p>
-<p>第一步，用命令<code>git add</code>告诉Git，把文件添加到仓库：</p>
-<p><img src="http://i2.bvimg.com/604257/06a86209ea6c99c9.png" alt=""></p>
-<p>执行上面的命令，没有任何显示，这就对了，“没有消息就是好消息”，说明添加成功。</p>
-<p>第二步，用命令<code>git commit</code>告诉Git，把文件提交到仓库：</p>
-<p><img src="http://i2.bvimg.com/604257/d680fa27ea748d92.png" alt=""></p>
-<p>简单解释一下<code>git commit</code>命令，<code>-m</code>后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。</p>
-<p><code>git commit</code>命令执行成功后会告诉你，1个文件被改动（我们新添加的readme.txt文件），插入了两行内容（readme.txt有两行内容）。</p>
-<p><code>commit</code>可以一次提交很多文件，所以你可以多次<code>add</code>不同的文件。</p>
-
-          
+          Git简介Git是什么？Git是目前世界上最先进的分布式版本控制系统。可以高效地管理代码，使用github社区必备。
+安装Git因为我用的是64位的Windows系统，所以以此为示例。  
+从Git官网下载：Git - Downloading Package 现在的机子基本都是64位的，选择64位的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/Git入门学习01/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -991,70 +971,20 @@ Git is free software.
       
         
           
-            <h1 id="【小甲鱼】系列视频006"><a href="#【小甲鱼】系列视频006" class="headerlink" title="【小甲鱼】系列视频006"></a>【小甲鱼】系列视频006</h1><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><ol>
-<li>算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。</li>
-<li>逻辑操作符：and，or，not。逻辑操作符输出为true或者false。</li>
-</ol>
-<h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><ol>
-<li>Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？<br>如果回答是 1.5 那么很遗憾，您受到 C 语言的影响比较大，Python 这里会义无反顾地执行 floor 除法原则，答案是：1.0</li>
-<li>a &lt; b &lt; c 事实上是等于？<br>(a &lt; b) and (b &lt; c)</li>
-<li>不使用 IDLE，你可以轻松说出 5 ** -2 的值吗？<br>0.04，也就是 1/25<br>幂运算操作符比其左侧的一元操作符优先级高，比其右侧的一元操作符优先级低。</li>
-<li>如何简单判断一个数是奇数还是偶数？<br>使用求余可以简单得到答案：能被 2 整除为偶数，所以 x % 2 == 0，否则为奇数。</li>
-<li>请用最快速度说出答案：not 1 or 0 and 1 or 3 and 4 or 5 and 6 or 7 and 8 and 9<br>如果你的回答是 0，那么小甲鱼很开心你中招了！<br>答案是：4<br>not or and 的优先级是不同的：not &gt; and &gt; or<br>我们按照优先级给它们加上括号：(not 1) or (0 and 1) or (3 and 4) or (5 and 6) or (7 and 8 and 9)<br>== 0 or 0 or 4 or 6 or 9<br>== 4<br>为啥是 4？<br>大家还记得第四讲作业提到的“短路逻辑”吗？3 and 4 == 4，而 3 or 4 == 3。<br>所以答案是：4<br>温馨提示：为了更好的表达你的程序，小甲鱼再次呼吁有些括号还是不能省下的，毕竟不是所有程序员都跟你一样都将优先级烂透于心的。</li>
-</ol>
-<h2 id="编程实例"><a href="#编程实例" class="headerlink" title="编程实例"></a>编程实例</h2><ol>
-<li>请写一个程序打印出 0~100 所有的奇数。<br><pre><br>i = 0<br>while i &lt;= 100:<br> if i % 2 != 0:<pre><code>print(i,&apos; &apos;)
-i+=1
-</code></pre> else:<pre><code>i+=1
-</code></pre></pre></li>
-</ol>
-<p></p>
-<ol>
-<li>题目：请编程求解该阶梯至少有多少阶？爱因斯坦曾出过这样一道有趣的数学题：有一个长阶梯，若每步上2阶，最后剩1阶；若每步上3阶，最后剩2阶；若每步上5阶，最后剩4阶；若每步上6阶，最后剩5阶；只有每步上7阶，最后刚好一阶也不剩。<br><pre><br> x = 7<br> i = 1<br> flag = 0<br> while i &lt;= 100:    <pre><code>if (x%2 == 1)and(x%3 == 2)and(x%5 == 4)and(x%6 ==5):  
-    flag = 1  
-else:  
-    x = 7 * (i + 1)  
-i+=1     
-</code></pre> if flag == 1:  <pre><code>print(&apos;阶梯数是：&apos;,x)  
-</code></pre> else:  <pre><code>print(&apos;在程序限定的范围内找不到答案！&apos;)  
-</code></pre></pre></li>
-</ol>
-<p>            </p>
-<h1 id="【小甲鱼】系列视频008"><a href="#【小甲鱼】系列视频008" class="headerlink" title="【小甲鱼】系列视频008"></a>【小甲鱼】系列视频008</h1><h2 id="笔记-1"><a href="#笔记-1" class="headerlink" title="笔记"></a>笔记</h2><ol>
-<li>elif语句的引用</li>
-<li>避免“悬挂else”<br><img src="http://i1.bvimg.com/604257/28adcacf7b47883a.png" alt=""><br>在Python中强制缩进，就不会出现分不清哪个if和哪个else匹配的情况。</li>
-<li>三元运算符<br><img src="http://i1.bvimg.com/604257/7ace84c989761fed.png" alt=""></li>
-<li>断言<br><img src="http://i1.bvimg.com/604257/37308841a5abd43d.png" alt=""></li>
-</ol>
-<h2 id="课后习题-1"><a href="#课后习题-1" class="headerlink" title="课后习题"></a>课后习题</h2><ol>
-<li>if not (money &lt; 100): 这行代码相当于？<br>if money &gt;= 100:</li>
-</ol>
-<ol>
-<li><p>假设有 x = 1，y = 2，z = 3，请问如何快速将三个变量的值互相交换？<br>x, y, z = z, y, x</p>
-</li>
-<li><p>你听说过成员资格运算符吗？<br>Python 有一个成员资格运算符：in，用于检查一个值是否在序列中，如果在序列中返回 True，否则返回 False。<br>例如：<br> <pre><br> 1.&gt;&gt;&gt; name = ‘小甲鱼’<br> 2.&gt;&gt;&gt; ‘鱼’ in name<br> 3.True<br> 4.&gt;&gt;&gt; ‘肥鱼’ in name<br> 5.False<br> </pre></p>
-<h2 id="编程实例-1"><a href="#编程实例-1" class="headerlink" title="编程实例"></a>编程实例</h2></li>
-<li><p>视频中小甲鱼使用 if elif else 在大多数情况下效率要比全部使用 if 要高，但根据一般的统计规律，<br>一个班的成绩一般服从正态分布，也就是说平均成绩一般集中在 70~80 分之间，因此根据统计规律，<br>我们还可以改进下程序以提高效率。</p>
- <pre>
- score = int (input ('请输入一个分数：'))
- if 80 > score >= 60:
-     print('c')
- elif 90 > score >= 80:
-     print('b')
- elif 60 > score >= 90:
-     print('d')
- elif 100 >= score >= 90:
-     print('a')
- else:
-     print('输入错误！')
+          【小甲鱼】系列视频006笔记
+算术操作符：/ 可能商是小数，// 整除，** 幂，% 取余。
+逻辑操作符：and，or，not。逻辑操作符输出为true或者false。
 
- </pre></li>
-<li>x,y,z中找到最小的数   <pre>
- small = x if (x < y and x < z) else (y if y < z else z)
- </pre></li>
-</ol>
-
-          
+课后习题
+Python 的 floor 除法现在使用 “//” 实现，那 3.0 // 2.0 您目测会显示什么内容呢？如果回答
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/Python入门学习02/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1194,88 +1124,19 @@ i+=1
       
         
           
-            <p>本文承接本人上一篇文章，<a href="http://suiwula.cn/2017/08/11/%E5%88%A9%E7%94%A8github%E5%92%8Chexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/" target="_blank" rel="external">利用github和hexo搭建网站</a>  </p>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><h3 id="下载next主题"><a href="#下载next主题" class="headerlink" title="下载next主题"></a>下载next主题</h3><p>好的主题有很多，我们就以next主题为例来美化我们的博客吧！  </p>
-<p>在Blog根目录下，打开Git Bash,输入</p>
-<pre>
-git clone https://github.com/iissnan/hexo-theme-next themes/next
-</pre>
+          本文承接本人上一篇文章，利用github和hexo搭建网站  
+更换主题下载next主题好的主题有很多，我们就以next主题为例来美化我们的博客吧！  
+在Blog根目录下，打开Git Bash,输入
 
-<p><img src="http://i1.bvimg.com/604257/37ad385bfc5f27e6.png" alt=""></p>
-<p>回车，git会自动帮你克隆最新的next主题到你的博客themes文件夹里。</p>
-<p><img src="http://i1.bvimg.com/604257/d43a8333fff1e978.png" alt=""></p>
-<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>打开站点的_config.yml配置文件，修改主题为next</p>
-<p><img src="http://i1.bvimg.com/604257/c59fe0e1d81c42b1.png" alt=""></p>
-<p>打开主题的_config.yml配置文件，不是站点主题文件，找到Scheme Settings</p>
-<p><img src="http://i4.bvimg.com/604257/5cf885db4fadfbf7.png" alt=""></p>
-<p>next主题有三个样式，我用的是Mist，你们可以自己试试看，选择你自己喜欢的样式（只需要把行首的#去除，#是注释），选择好后，再次部署网站，hexo g、hexo d，查看效果。选择其他主题，按照上述过程即可实现。</p>
-<p><img src="http://i4.bvimg.com/604257/0436f3ddb05e5162.png" alt=""></p>
-<h2 id="next主题优化"><a href="#next主题优化" class="headerlink" title="next主题优化"></a>next主题优化</h2><h3 id="更改语言"><a href="#更改语言" class="headerlink" title="更改语言"></a>更改语言</h3><p>打开站点配置文件，将language后面的内容修改为zh-Hans。注意,冒号之后必有空格!</p>
-<p><img src="http://i4.bvimg.com/604257/0e91cc0ad01567b7.png" alt=""></p>
-<p>如果出现汉字乱码的情况，下载sublime软件，用它打开配置文件进行修改。</p>
-<p>然后在git里输入</p>
-<pre>
-hexo g
-
-hexo d
-</pre>
-
-<p>将更改发布到自己的网站上。</p>
-<h3 id="添加分类、标签云、关于等页面"><a href="#添加分类、标签云、关于等页面" class="headerlink" title="添加分类、标签云、关于等页面"></a>添加分类、标签云、关于等页面</h3><p>以添加分类页面为例，</p>
-<p>在站点目录下，打开git bash，输入</p>
-<pre>
-hexo new page "categories"
-</pre>
-
-<p>之后在站点目录下的source文件夹下，会新增一个categories的文件夹  </p>
-<p><img src="http://i1.bvimg.com/604257/f9bf75bd38a92abc.png" alt=""></p>
-<p>里面有一个index.md文件，打开如下</p>
-<p><img src="http://i1.bvimg.com/604257/eda0c8ae6ee5beed.png" alt=""></p>
-<p>title:后的内容是直接显示在网站分类页面的，这里选择不填。效果如下：</p>
-<p><img src="http://i1.bvimg.com/604257/679487f3e8099372.png" alt=""></p>
-<p>tags, about页面的创建类似，输入</p>
-<pre>
-hexo new page "tags"  
-hexo new page "about"
-</pre>
-
-<p>tags具体设置与categories相似。about的index.md文件修改成如下：</p>
-<p><img src="http://i1.bvimg.com/604257/0675fad52a8ba788.png" alt=""></p>
-<p>网站效果如下：</p>
-<p><img src="http://i1.bvimg.com/604257/8c15ecbcb4b386ff.png" alt=""></p>
-<h3 id="设置右侧头像"><a href="#设置右侧头像" class="headerlink" title="设置右侧头像"></a>设置右侧头像</h3><p>编辑站点配置文件，添加如下内容</p>
-<p>avatar: your avatar url</p>
-<p>其中，your avatar url是完整的互联网url，你可以先将头像图片放在图床上，在复制链接，粘贴过来。  </p>
-<p>效果如下：</p>
-<p><img src="http://i4.bvimg.com/604257/e31e421fa1f5b5fd.png" alt=""></p>
-<h3 id="设置favicon图标"><a href="#设置favicon图标" class="headerlink" title="设置favicon图标"></a>设置favicon图标</h3><p>首先要有一个常见格式名(如.jpg, .png等)的图片作为备选favicon，选择一个favicon制作网站完成制作，例如<a href="http://www.bitbug.net/" target="_blank" rel="external">比特虫</a>是一个免费的在线制作ico图标网站。</p>
-<p>将favicon.ico文件放在网站根目录下的source文件夹内即可。</p>
-<p><img src="http://i4.bvimg.com/604257/29a1fb813ed39be7.png" alt=""></p>
-<p>用git刷新网站，就可以看到效果了。</p>
-<p><img src="http://i4.bvimg.com/604257/04da6ab3632f4084.png" alt=""></p>
-<h3 id="首页文章以摘要形式显示"><a href="#首页文章以摘要形式显示" class="headerlink" title="首页文章以摘要形式显示"></a>首页文章以摘要形式显示</h3><p>最简单的方式是：打开主题配置文件，找到如下位置，修改</p>
-<p><img src="http://i4.bvimg.com/604257/9c3f50924394050d.png" alt=""></p>
-<p>其中length代表显示摘要的截取字符长度。</p>
-<h3 id="添加背景图"><a href="#添加背景图" class="headerlink" title="添加背景图"></a>添加背景图</h3><p>首先找到一个背景图片放到 Blog（hexo工程文件）-&gt; themes -&gt; next -&gt; source -&gt; images 的路径下；</p>
-<p>Blog（hexo工程文件）-&gt; themes -&gt; next -&gt; source -&gt; css -&gt; _custom ，找到路径下的custom.styl文件，在文件的最上方加上一代码</p>
-<pre>
-body {  
- background:url(/images/backGround.jpg（这是你之前加的背景图片的名字）);  
-     }
-</pre>
-
-<p>效果图：</p>
-<p><img src="http://i4.bvimg.com/604257/0436f3ddb05e5162.png" alt=""></p>
-<p>如果想让背景图片不随着页面移动而移动，在上面的代码后加上一行代码</p>
-<pre>
-body {
-  background:url(/images/background.jpeg);
-  background-attachment: fixed;
-}
-</pre>
-
-
-          
+git clone https://github.com/iissnan/hexo-theme-
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/基于Hexo框架下NexT主题的网站优化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1415,127 +1276,15 @@ body {
       
         
           
-            <h1 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo?"></a>什么是Hexo?</h1><p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexojs/hexo</a> 如果想要更加全面的了解Hexo，可以到其官网 <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a> 了解更多的细节，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。这里，默认各位猿/媛儿都知道GitHub就不再赘述。</p>
-<h1 id="搭建步骤："><a href="#搭建步骤：" class="headerlink" title="搭建步骤："></a>搭建步骤：</h1><ul>
-<li>获得个人网站域名  </li>
-<li>github创建个人仓库  </li>
-<li>安装Git</li>
-<li>安装Node.js</li>
-<li>安装Hexo</li>
-<li>推送网站</li>
-<li>绑定域名  </li>
-</ul>
-<h2 id="获得个人网站域名"><a href="#获得个人网站域名" class="headerlink" title="获得个人网站域名"></a>获得个人网站域名</h2><p>域名是网站的入口，也是网站的第一印象，比如饿了么的官网的域名是：<a href="https://www.ele.me/" target="_blank" rel="external">ele.me</a> ，很是巧妙。常见的有com,cn,net,org等后缀，也有小众的xyz,me,io等后缀，根据你自己的喜好，选择不同的后缀，比如我选择就是常见的com后缀。很多小众奇特的后缀在大陆是没办法备案的，网站也就无法上线。然而使用GitHub托管我们的网站，完全不需要备案，因为托管我们的网站内容的服务器在美国，而且在国内备案流程也比较繁杂，时间需要一周左右。</p>
-<p>申请域名的地方有很多，这里推荐阿里云：<a href="https://www.aliyun.com/" target="_blank" rel="external">阿里云-为了无法计算的价值</a> 申请入口：<a href="https://wanwang.aliyun.com/domain/" target="_blank" rel="external">域名注册</a> 购买域名这也是我们整个搭建过程中惟一一个需要花钱的地方。如果你已经有了空闲域名就无需购买，直接使用即可。</p>
-<p>我是在阿里云申请的域名，购买后，需要进行实名认证才能访问和解析，具体查看<a href="https://help.aliyun.com/noticelist/articleid/20273717.html?spm=5176.2020520001.1004.9.ujfgWR" target="_blank" rel="external">域名实名认证公告</a>。</p>
-<h2 id="github创建个人仓库"><a href="#github创建个人仓库" class="headerlink" title="github创建个人仓库"></a>github创建个人仓库</h2><p>登录到GitHub,如果没有GitHub帐号，使用你的邮箱注册GitHub帐号：<a href="https://github.com/" target="_blank" rel="external">Build software better, together</a> 点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.github.io 这个用户名使用你的GitHub帐号名称代替，这是固定写法，比如我的仓库名为：suiwula.github.io。</p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。 从Git官网下载：<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git - Downloading Package</a> 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash<br><img src="http://i2.bvimg.com/604257/c1e5d9fc5eaa0022.jpg" alt=""></p>
-<p>设置user.name和user.email配置信息：  </p>
-<pre> 
-git  config --global user.name "你的github用户名"
-git  config --global user.email "你的github注册邮箱"
-</pre> 
-
-<p>生成ssh密钥文件：</p>
-<pre>
-ssh-keygen -t rsa -C "你的github注册邮箱"
-</pre>
-
-<p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制</p>
-<p><img src="http://i1.bvimg.com/604257/70753362ed1fa5a3.jpg" alt=""></p>
-<p>打开<a href="https://github.com/settings/keys" target="_blank" rel="external">GitHub_Settings_keys</a> 页面，新建new SSH Key</p>
-<p><img src="http://i1.bvimg.com/604257/506c4e57b0719b99.jpg" alt=""></p>
-<p>Title为标题，任意填即可，将刚刚复制的id_rsa.pub内容粘贴进去，最后点击Add SSH key。<br>在Git Bash中检测GitHub公钥设置是否成功，输入 ssh git@github.com ：</p>
-<p><img src="http://i1.bvimg.com/604257/ee1ffb3fa02641e7.jpg" alt=""></p>
-<p>如上则说明成功。这里之所以设置GitHub密钥原因是，通过非对称加密的公钥与私钥来完成加密，公钥放置在GitHub上，私钥放置在自己的电脑里。GitHub要求每次推送代码都是合法用户，所以每次推送都需要输入账号密码验证推送用户是否是合法用户，为了省去每次输入密码的步骤，采用了ssh，当你推送的时候，git就会匹配你的私钥跟GitHub上面的公钥是否是配对的，若是匹配就认为你是合法用户，则允许推送。这样可以保证每次的推送都是正确合法的。</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Hexo基于Node.js，Node.js下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Download | Node.js</a> 下载安装包，注意安装Node.js会包含环境变量及npm的安装，安装后，检测Node.js是否安装成功，在命令行中输入 node -v :</p>
-<p><img src="http://i1.bvimg.com/604257/988df73bc520dd7e.png" alt=""></p>
-<p>检测npm是否安装成功，在命令行中输入npm -v :</p>
-<p><img src="http://i1.bvimg.com/604257/88bab4165183b8ea.png" alt=""></p>
-<p>到这了，安装Hexo的环境已经全部搭建完成。</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>Hexo就是我们的个人博客网站的框架， 这里需要自己在电脑常里创建一个文件夹，可以命名为Blog，Hexo框架与以后你自己发布的网页都在这个文件夹中。创建好后，进入文件夹中，按住shift键，右击鼠标点击命令行</p>
-<p><img src="http://i1.bvimg.com/604257/5339a2a2235cf505.jpg" alt=""></p>
-<p>使用npm命令安装Hexo，输入：</p>
-<pre>
-npm install -g hexo-cli 
-</pre>
-
-<p>这个安装时间较长耐心等待，安装完成后，初始化我们的博客，输入：</p>
-<pre>
-hexo init blog
-</pre>
-
-<p>注意，这里的命令都是作用在刚刚创建的Blog文件夹中。<br>为了检测我们的网站雏形，分别按顺序输入以下三条命令：</p>
-<pre>
-hexo new hello
-
-hexo g
-
-hexo s
-</pre>
-
-<p>这些命令在后面作介绍，完成后，打开浏览器输入地址：</p>
-<p>localhost:4000</p>
-<p>可以看出我们写出第一篇博客。</p>
-<p>如果你输入上面地址打不开，可能是4000端口被占用。输入</p>
-<pre>
-hexo s -p 5000
-</pre>
-
-<p>打开浏览器地址：<br>localhost:5000，即可显示。</p>
-<p>现在来介绍常用的Hexo 命令  </p>
-<p>npm install hexo -g #安装Hexo<br>npm update hexo -g #升级<br>hexo init #初始化博客</p>
-<p>命令简写<br>hexo n “我的博客” == hexo new “我的博客” #新建文章<br>hexo g == hexo generate #生成<br>hexo s == hexo server #启动服务预览<br>hexo d == hexo deploy #部署  </p>
-<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令  </p>
-<p>刚刚的三个命令依次是新建一篇博客文章、生成网页、在本地预览的操作。</p>
-<h2 id="推送网站"><a href="#推送网站" class="headerlink" title="推送网站"></a>推送网站</h2><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
-<p><img src="http://i1.bvimg.com/604257/7de9548ca4e5a0cc.png" alt=""></p>
-<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件，如下图</p>
-<p><img src="http://i1.bvimg.com/604257/ee46d54808453744.png" alt=""></p>
-<p>下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为：</p>
-<p>deploy:<br>type: git<br>repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git<br>branch: master参考如下：  </p>
-<p><img src="http://i1.bvimg.com/604257/9278b78d561bb650.png" alt=""></p>
-<p>保存站点配置文件。其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。  </p>
-<p>最后安装Git部署插件，输入命令：</p>
-<pre>
-npm install hexo-deployer-git --save
-</pre>
-
-<p>这时，我们分别输入三条命令：</p>
-<pre>
-hexo clean
-
-hexo g
-
-hexo d
-</pre>
-
-<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a href="http://xxxx.github.io。" target="_blank" rel="external">http://xxxx.github.io。</a> 比如我输入的网站就是：<a href="suiwula.github.io">suiwula.github.io</a>  </p>
-<p>你就会发现你的博客已经上线了，可以在网络上被访问了。</p>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>虽然在Internet上可以访问我们的网站，但是网址是GitHub提供的:<a href="http://xxxx.github.io" target="_blank" rel="external">http://xxxx.github.io</a> 而我们想使用我们自己的个性化域名，这就需要绑定我们自己的域名。这里演示的是在阿里云万网的域名绑定，在国内主流的域名代理厂商也就阿里云和腾讯云。登录到阿里云，进入管理控制台的域名列表，找到你的个性化域名，进入解析</p>
-<p><img src="http://i2.bvimg.com/604257/e840b4c1e1332ac9.png" alt=""></p>
-<p>然后添加解析</p>
-<p><img src="http://i2.bvimg.com/604257/af1955694e5451f6.png" alt=""></p>
-<p>包括添加三条解析记录:  </p>
-<p>ping你的 <a href="http://xxxx.github.io" target="_blank" rel="external">http://xxxx.github.io</a> 的ip地址，填入A记录类型。  </p>
-<p>第二步，登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名,点击save保存。</p>
-<p><img src="http://i2.bvimg.com/604257/fce39f4d252751ba.png" alt=""></p>
-<p>第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。</p>
-<p><img src="http://i2.bvimg.com/604257/691718cf7962878a.png" alt=""></p>
-<p>保存，命名为CNAME ，注意保存成所有文件而不是txt文件。</p>
-<p>完成这三步，进入blog目录中，右击打开Git Bash Here，依次输入：</p>
-<pre>
-hexo clean
-
-hexo g
-
-hexo d
-</pre>
-
-<p>等上几十秒，再打开浏览器在地址栏输入你的个性化域名将会直接进入你自己搭建的网站。</p>
-<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>通过以上流程，我们就可以搭建一个属于自己的网站小窝啦 ^_^</p>
-
-          
+          什么是Hexo?Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub。Hexo同时也是GitHub上的开源项目，参见：hexojs/hexo 如果想要更加全面的了解Hexo，可
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/11/利用github和hexo搭建网站/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1675,54 +1424,20 @@ hexo d
       
         
           
-            <h1 id="【小甲鱼】系列视频001"><a href="#【小甲鱼】系列视频001" class="headerlink" title="【小甲鱼】系列视频001"></a>【小甲鱼】系列视频001</h1><h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><ol>
-<li>Python是什么类型的语言？<br> Python是脚本语言   <blockquote>
-<p>脚本语言又被称为扩建的语言，或者动态语言，是一种编程语言，用来控制软件应用程序，脚本通常以文本（如ASCII)保存，只在被调用时进行解释或编译。</p>
-</blockquote>
-</li>
-<li>IDLE是什么？<br>IDLE是一个Python Shell,shell的意思就是“外壳”,基本上说，就是一个通过键入文本与程序交互的途径！像 我们Windows那个cmd窗口，像Linux那个黑乎乎的命令窗口，他们都是shell，利用他们，我们就可以给操作系统下达命令。同样的，我们可以利用IDLE这个shell与Python进行互动。  </li>
-<li>print()的作用是什么？<br>print()会在输出窗口中显示一些文本（输出窗口就是IDLE shell窗口）。</li>
-<li>为什么&gt;&gt;&gt;print(‘hello world’ * 5 )可以正常执行，但&gt;&gt;&gt;print(‘hello world’ + 5 )却报错？<br>在Python中不能把两个完全不同的东西加在一起，比如说数学和文本，正是这个原因，&gt;&gt;&gt;print(hello world + 5 )才会报错。</li>
-<li>如果我需要在一个字符串中嵌入一个双引号，正确的做法是？<br>可以利用反斜杠（\）对双引号转义：\” ，或者用单引号引起这个字符串。例如：‘hello “world” ’。<h1 id="【小甲鱼】系列视频002"><a href="#【小甲鱼】系列视频002" class="headerlink" title="【小甲鱼】系列视频002"></a>【小甲鱼】系列视频002</h1><h2 id="课后习题-1"><a href="#课后习题-1" class="headerlink" title="课后习题"></a>课后习题</h2></li>
-<li>什么是BIF?<br>BIF就是Built-in Functions，内置函数。为了方便程序员快速编写脚本程序。</li>
-<li>Python中字母严格分大小写。</li>
-<li>缩进是Python的灵魂</li>
-<li>Python不允许if条件中赋值，所以if c = 1: 会报错！<h2 id="编程实例"><a href="#编程实例" class="headerlink" title="编程实例"></a>编程实例</h2></li>
-<li><p>编写程序：hello.py，要求用户输入姓名并打印“你好，姓名！”  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> name = input (<span class="string">"请输入您的姓名"</span>)</div><div class="line"><span class="keyword">print</span> (<span class="string">'你好'</span> + name + <span class="string">'!'</span>)</div></pre></td></tr></table></figure>
-</li>
-<li><p>编写程序：calc.py要求用户输入1-100之间数字并判断，输入符合要求打印“你妹好漂亮”，不符合要求打印“你大爷好丑”。</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">temp = input (<span class="string">"请输入1-100数字"</span>)</div><div class="line">num =int( temp )</div><div class="line"><span class="keyword">if</span> <span class="number">1</span> &lt;= num  &lt;= <span class="number">100</span> :	</div><div class="line">    <span class="keyword">print</span> (<span class="string">"你妹好漂亮"</span>)</div><div class="line"><span class="keyword">else</span> :</div><div class="line">    print(<span class="string">"你大爷好丑"</span>)</div></pre></td></tr></table></figure>
-<h1 id="【小甲鱼】系列视频03"><a href="#【小甲鱼】系列视频03" class="headerlink" title="【小甲鱼】系列视频03"></a>【小甲鱼】系列视频03</h1><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><ol>
-<li>在使用变量前，必须对其赋值。</li>
-<li>变量名可以包括字母、数字、下划线，但变量名不能以数字开头。</li>
-<li>Python变量名大小写严格区分。</li>
-<li>字符串的拼接<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myteacher = <span class="string">'小甲鱼'</span></div><div class="line">yourteacher = <span class="string">'黑夜'</span></div><div class="line">ourteacher = myteacher + yourteacher</div><div class="line">print(ourteacher)</div><div class="line">小甲鱼黑夜</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'5'</span> + <span class="string">'8'</span></div><div class="line"><span class="string">'58'</span></div></pre></td></tr></table></figure>
-<ol>
-<li>使用转义字符 \ 对单引号或双引号转义</li>
-<li>对于一个字符串中有很多个反斜杠，可以用反斜杠对反斜杠进行转义，更简单的方法是用原始字符串——在字符串前加一个英文字母r即可<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">string = <span class="string">r'C:\Program Files\Intel\WiFi\Help'</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>但使用原始字符串后，最后不能加反斜杠，想加的话反斜杠后加空格。</p>
-<ol>
-<li>如果希望得到一个跨越多行的字符串，例如：<br>悯农<br>春种一粒粟， 秋成万颗子。<br>四海无闲田， 农夫犹饿死。<br>锄禾日当午， 汗滴禾下土。<br>谁知盘中餐， 粒粒皆辛苦。<br>这就需要使用到三重引号字符串。<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">poem = <span class="string">"""悯农  </span></div><div class="line"><span class="string">春种一粒粟， 秋成万颗子。  </span></div><div class="line"><span class="string">四海无闲田， 农夫犹饿死。  </span></div><div class="line"><span class="string">锄禾日当午， 汗滴禾下土。  </span></div><div class="line"><span class="string">谁知盘中餐， 粒粒皆辛苦。"""</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h1 id="【小甲鱼】系列视频004"><a href="#【小甲鱼】系列视频004" class="headerlink" title="【小甲鱼】系列视频004"></a>【小甲鱼】系列视频004</h1><h2 id="编程实例-1"><a href="#编程实例-1" class="headerlink" title="编程实例"></a>编程实例</h2><p>猜数字小游戏<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> random</div><div class="line">secret = random.randint(<span class="number">1</span>,<span class="number">10</span>)</div><div class="line">temp = input(<span class="string">"请猜一下我心里想的数字："</span>)</div><div class="line">guess = int (temp)</div><div class="line"><span class="keyword">while</span> guess != secret:</div><div class="line">    temp = input(<span class="string">"猜错了，请重新输入吧: "</span>)</div><div class="line">    guess = int(temp)</div><div class="line">    <span class="keyword">if</span> guess == secret:</div><div class="line">        print(<span class="string">"猜中了，真厉害"</span>)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">if</span> guess &gt; secret:</div><div class="line">            print(<span class="string">"大了大了"</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"小了小了"</span>)</div><div class="line">print(<span class="string">"游戏结束"</span>)</div></pre></td></tr></table></figure></p>
-<h1 id="【小甲鱼】系列视频005"><a href="#【小甲鱼】系列视频005" class="headerlink" title="【小甲鱼】系列视频005"></a>【小甲鱼】系列视频005</h1><h2 id="笔记-1"><a href="#笔记-1" class="headerlink" title="笔记"></a>笔记</h2><ol>
-<li>在Python中，int表示整型，bool表示布尔类型，float表示浮点类型，str表示字符串类型。</li>
-<li>布尔类型的true和false分别用1和0代替。</li>
-<li>使用int()将小数转换为整数，向下取整。</li>
-<li>int()想要四舍五入的话，+0.5.</li>
-<li>type()和isinstance()都可以判断变量名类型。</li>
-</ol>
+          【小甲鱼】系列视频001课后习题
+Python是什么类型的语言？ Python是脚本语言   
+脚本语言又被称为扩建的语言，或者动态语言，是一种编程语言，用来控制软件应用程序，脚本通常以文本（如ASCII)保存，只在被调用时进行解释或编译。
 
-          
+
+IDLE是什么？IDLE是一个Python Shell
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/09/Python入门学习01/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1836,6 +1551,30 @@ hexo d
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/SuiWula" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/sui-wu-la/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -1871,23 +1610,19 @@ hexo d
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">碎乌拉</span>
-
-  
 </div>
 
 
-  <div class="powered-by">
-    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-  </div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-  <span class="post-meta-divider">|</span>
-
-  <div class="theme-info">
-    主题 &mdash;
-    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-      NexT.Muse
-    </a>
-  </div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
 
 
         
@@ -2005,8 +1740,6 @@ hexo d
 
 
   
-
-
 
 
 
