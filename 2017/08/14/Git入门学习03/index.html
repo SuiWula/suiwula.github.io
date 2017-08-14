@@ -76,7 +76,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -92,17 +92,24 @@
 
 
 
-<meta name="description" content="碎碎念念，呜哩哇啦">
+<meta name="description" content="git log指令作用git log可以查看提交历史，以便确定要回退到哪个版本。 例子将readme.txt文件修改如下如下，并提交：  Git is a distributed version control system. Git is free software distributed under the GPL.   版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用git">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git入门学习03">
 <meta property="og:url" content="http://www.suiwula.cn/2017/08/14/Git入门学习03/index.html">
 <meta property="og:site_name" content="碎乌拉的小窝">
-<meta property="og:description" content="碎碎念念，呜哩哇啦">
+<meta property="og:description" content="git log指令作用git log可以查看提交历史，以便确定要回退到哪个版本。 例子将readme.txt文件修改如下如下，并提交：  Git is a distributed version control system. Git is free software distributed under the GPL.   版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用git">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-14T01:25:53.603Z">
+<meta property="og:image" content="http://i2.fuimg.com/604257/f0ed9978fef13962.png">
+<meta property="og:image" content="http://i2.fuimg.com/604257/a5a12ca78421d963.png">
+<meta property="og:image" content="http://i2.fuimg.com/604257/53d9b1c5f6d03f20.png">
+<meta property="og:image" content="http://i2.fuimg.com/604257/11b8c22462a4ad87.png">
+<meta property="og:image" content="http://i2.fuimg.com/604257/d0c33af7a3ece554.png">
+<meta property="og:updated_time" content="2017-08-14T01:28:27.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git入门学习03">
-<meta name="twitter:description" content="碎碎念念，呜哩哇啦">
+<meta name="twitter:description" content="git log指令作用git log可以查看提交历史，以便确定要回退到哪个版本。 例子将readme.txt文件修改如下如下，并提交：  Git is a distributed version control system. Git is free software distributed under the GPL.   版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用git">
+<meta name="twitter:image" content="http://i2.fuimg.com/604257/f0ed9978fef13962.png">
 
 
 
@@ -316,6 +323,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -343,7 +372,35 @@
       
 
       
-        
+        <h1 id="git-log指令"><a href="#git-log指令" class="headerlink" title="git log指令"></a><code>git log</code>指令</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p><code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>将readme.txt文件修改如下如下，并提交：</p>
+<pre>
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+</pre>
+
+<p>版本控制系统肯定有某个命令可以告诉我们历史记录，在Git中，我们用<code>git log</code>命令查看：</p>
+<p><img src="http://i2.fuimg.com/604257/f0ed9978fef13962.png" alt=""></p>
+<p><code>git log</code>命令显示从最近到最远的提交日志，我们可以看到3次提交，最近的一次是<code>append GPL</code>，上一次是<code>add distributed</code>，最早的一次是<code>wrote a readme file</code>。如果嫌输出信息太多，看得眼花缭乱的，可以试试加上<code>--pretty=oneline</code>参数：</p>
+<p><img src="http://i2.fuimg.com/604257/a5a12ca78421d963.png" alt=""></p>
+<p>需要友情提示的是，你看到的一大串类似6edc3a…e956a6的是<code>commit id</code>（版本号），和SVN不一样，Git的<code>commit id</code>不是1，2，3……递增的数字，而是一个SHA1计算出来的一个非常大的数字，用十六进制表示，而且你看到的<code>commit id</code>和我的肯定不一样，以你自己的为准。为什么<code>commit id</code>需要用这么一大串数字表示呢？因为Git是分布式的版本控制系统，后面我们还要研究多人在同一个版本库里工作，如果大家都用1，2，3……作为版本号，那肯定就冲突了。</p>
+<h1 id="git-reset指令"><a href="#git-reset指令" class="headerlink" title="git reset指令"></a><code>git reset</code>指令</h1><h2 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h2><p>把文件回退到某一版本</p>
+<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p>首先，Git必须知道当前版本是哪个版本，在Git中，用<code>HEAD</code>表示当前版本，也就是最新的提交6edc3a…e956a6（注意我的提交ID和你的肯定不一样），上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>HEAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成<code>HEAD~100</code>。</p>
+<p>现在，我们要把当前版本“append GPL”回退到上一个版本“add distributed”，就可以使用<code>git reset</code>命令：</p>
+<p><img src="http://i2.fuimg.com/604257/53d9b1c5f6d03f20.png" alt=""></p>
+<p>看看readme.txt的内容是不是版本<code>add distributed</code>：</p>
+<p><img src="http://i2.fuimg.com/604257/11b8c22462a4ad87.png" alt=""></p>
+<h1 id="git-reflog指令"><a href="#git-reflog指令" class="headerlink" title="git reflog指令"></a><code>git reflog</code>指令</h1><h2 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h2><p>当你用<code>$ git reset --hard HEAD^</code>回退到<code>add distributed</code>版本时，再想恢复到<code>append GPL</code>，就必须找到<code>append GPL</code>的commit id。Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令：</p>
+<h2 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h2><p><img src="http://i2.fuimg.com/604257/d0c33af7a3ece554.png" alt=""></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ol>
+<li><p>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。</p>
+</li>
+<li><p>穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
+</li>
+<li><p>要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
+</li>
+</ol>
+
       
     </div>
     
@@ -357,6 +414,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
       
 
       
@@ -427,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i2.bvimg.com/604257/1def1cb90db8f32c.png"
@@ -514,6 +586,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git-log指令"><span class="nav-number">1.</span> <span class="nav-text">git log指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">1.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-reset指令"><span class="nav-number">2.</span> <span class="nav-text">git reset指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用-1"><span class="nav-number">2.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子-1"><span class="nav-number">2.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-reflog指令"><span class="nav-number">3.</span> <span class="nav-text">git reflog指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用-2"><span class="nav-number">3.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子-2"><span class="nav-number">3.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
