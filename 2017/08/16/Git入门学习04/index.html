@@ -92,18 +92,21 @@
 
 
 
-<meta name="description" content="碎碎念念，呜哩哇啦">
+<meta name="description" content="工作区（Working Directory）就是你在电脑里能看到的目录，比如我的learngit文件夹就是一个工作区：  版本库（Repository）工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。 Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git入门学习04">
 <meta property="og:url" content="http://www.suiwula.cn/2017/08/16/Git入门学习04/index.html">
 <meta property="og:site_name" content="碎乌拉的小窝">
-<meta property="og:description" content="碎碎念念，呜哩哇啦">
+<meta property="og:description" content="工作区（Working Directory）就是你在电脑里能看到的目录，比如我的learngit文件夹就是一个工作区：  版本库（Repository）工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。 Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-16T02:32:46.782Z">
+<meta property="og:image" content="http://i4.bvimg.com/604257/f5be1e37ac204604.png">
+<meta property="og:image" content="http://i4.bvimg.com/604257/31fbeb5a95c3a83f.png">
+<meta property="og:updated_time" content="2017-08-16T14:22:33.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git入门学习04">
-<meta name="twitter:description" content="碎碎念念，呜哩哇啦">
+<meta name="twitter:description" content="工作区（Working Directory）就是你在电脑里能看到的目录，比如我的learngit文件夹就是一个工作区：  版本库（Repository）工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。 Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD">
+<meta name="twitter:image" content="http://i4.bvimg.com/604257/f5be1e37ac204604.png">
 
 
 
@@ -366,7 +369,27 @@
       
 
       
-        
+        <h1 id="工作区（Working-Directory）"><a href="#工作区（Working-Directory）" class="headerlink" title="工作区（Working Directory）"></a>工作区（Working Directory）</h1><p>就是你在电脑里能看到的目录，比如我的<code>learngit</code>文件夹就是一个工作区：</p>
+<p><img src="http://i4.bvimg.com/604257/f5be1e37ac204604.png" alt=""></p>
+<h1 id="版本库（Repository）"><a href="#版本库（Repository）" class="headerlink" title="版本库（Repository）"></a>版本库（Repository）</h1><p>工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库。</p>
+<p>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针叫<code>HEAD</code>。</p>
+<p><img src="http://i4.bvimg.com/604257/31fbeb5a95c3a83f.png" alt=""></p>
+<p>分支和<code>HEAD</code>的概念我们以后再讲。</p>
+<p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
+<p>第一步是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+<p>第二步是用<code>git commit</code>提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+<p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个<code>master</code>分支，所以，现在，<code>git commit</code>就是往<code>master</code>分支上提交更改。</p>
+<p>你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+<h1 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h1><p>先对<code>readme.txt</code>做个修改，比如加上一行内容：</p>
+<pre>
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+</pre>
+
+<p>然后，在工作区新增一个<code>LICENSE</code>文本文件（内容随便写）。</p>
+<p>先用<code>git status</code>查看一下状态：</p>
+
       
     </div>
     
@@ -456,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i2.bvimg.com/604257/1def1cb90db8f32c.png"
@@ -519,6 +551,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作区（Working-Directory）"><span class="nav-number">1.</span> <span class="nav-text">工作区（Working Directory）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本库（Repository）"><span class="nav-number">2.</span> <span class="nav-text">版本库（Repository）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#举个例子"><span class="nav-number">3.</span> <span class="nav-text">举个例子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
