@@ -105,7 +105,8 @@
 <meta property="og:image" content="http://i4.bvimg.com/604257/09ddd49d5980c203.png">
 <meta property="og:image" content="http://i4.bvimg.com/604257/3c6e2da84fd3b498.png">
 <meta property="og:image" content="http://i4.bvimg.com/604257/7f9877c68393592f.png">
-<meta property="og:updated_time" content="2017-08-24T13:29:45.107Z">
+<meta property="og:image" content="http://i1.bvimg.com/604257/134dcbd5df793b6c.png">
+<meta property="og:updated_time" content="2017-08-24T13:31:05.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git入门学习05">
 <meta name="twitter:description" content="什么是修改？比如你新增了一行，这就是一个修改，删除了一行，也是一个修改，更改了某些字符，也是一个修改，删了一些又加了一些，也是一个修改，甚至创建一个新文件，也算一个修改。 管理修改为什么Git比其他版本控制系统设计得优秀，因为Git跟踪并管理的是修改，而非文件。 为什么说Git管理的是修改，而不是文件呢？我们还是做实验。第一步，对readme.txt做一个修改，比如加一行内容：  然后，添加：">
@@ -386,7 +387,12 @@
 <p><img src="http://i4.bvimg.com/604257/7f9877c68393592f.png" alt=""></p>
 <p>咦，怎么第二次的修改没有被提交？</p>
 <p>别激动，我们回顾一下操作过程：</p>
-<p>第一次修改 -&gt; <figure class="highlight plain"><figcaption><span>add``` -> 第二次修改 -> ```git commit```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">你看，我们前面讲了，Git管理的是修改，当你用```git add```命令后，在工作区的第一次修改被放入暂存区，准备提交，但是，在工作区的第二次修改并没有放入暂存区，所以，```git commit```只负责把暂存区的修改提交了，也就是第一次的修改被提交了，第二次的修改不会被提交。</div><div class="line"></div><div class="line">提交后，用```git diff HEAD -- readme.txt```命令可以查看工作区和版本库里面最新版本的区别：</div><div class="line"></div><div class="line">![](http://i1.bvimg.com/604257/134dcbd5df793b6c.png)</div><div class="line"></div><div class="line">那怎么提交第二次修改呢？你可以继续```git add```再```git commit```，也可以别着急提交第一次修改，先```git add```第二次修改，再```git commit```，就相当于把两次修改合并后一块提交了：</div><div class="line"></div><div class="line">第一次修改 -&gt; ```git add ```-&gt; 第二次修改 -&gt; ```git add``` -&gt; ```git commit</div></pre></td></tr></table></figure></p>
+<p>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git commit</p>
+<p>你看，我们前面讲了，Git管理的是修改，当你用git add命令后，在工作区的第一次修改被放入暂存区，准备提交，但是，在工作区的第二次修改并没有放入暂存区，所以，git commit只负责把暂存区的修改提交了，也就是第一次的修改被提交了，第二次的修改不会被提交。</p>
+<p>提交后，用git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别：</p>
+<p><img src="http://i1.bvimg.com/604257/134dcbd5df793b6c.png" alt=""></p>
+<p>那怎么提交第二次修改呢？你可以继续git add再git commit，也可以别着急提交第一次修改，先git add第二次修改，再git commit，就相当于把两次修改合并后一块提交了：</p>
+<p>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git add -&gt; git commit</p>
 <p>Git是如何跟踪修改的，每次修改，如果不add到暂存区，那就不会加入到commit中。</p>
 
       
